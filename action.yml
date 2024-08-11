@@ -12,7 +12,7 @@ inputs:
     default: "pipelines"
 runs:
   using: docker
-  image: mischathompson/render-alloy-templates:jinja2
+  image: "docker://mischathompson/render-alloy-templates:jinja2"
   args:
     - ${{ inputs.inputs_dir }}
     - ${{ inputs.outputs_dir }}
