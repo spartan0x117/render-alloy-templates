@@ -1,0 +1,18 @@
+name: "render-grafana-alloy-templates"
+description: "Render Grafana Alloy configurations from jinja2 templates"
+branding:
+  icon: arrow-right-circle
+  color: orange
+inputs:
+  inputs_dir:
+    description: "Directory to search for template directories"
+    default: "templates"
+  outputs_dir:
+    description: "Directory to output rendered .alloy configs"
+    default: "pipelines"
+runs:
+  using: docker
+  image: mischathompson/render-alloy-templates:jinja2
+  args:
+    - ${{ inputs.inputs_dir }}
+    - ${{ inputs.outputs_dir }}
